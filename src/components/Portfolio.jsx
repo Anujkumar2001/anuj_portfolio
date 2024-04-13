@@ -142,6 +142,9 @@ const Portfolio = ({ userData }) => {
                             className="portfolio-subtitle"
                             style={{
                               display: "flex",
+                              flexDirection: "column",
+                              alignItems: "start",
+                              flexWrap: "wrap",
                               marginTop: "10px",
                             }}
                           >
@@ -149,8 +152,11 @@ const Portfolio = ({ userData }) => {
                             <ul
                               style={{
                                 display: "flex",
+                                flexWrap: "wrap",
+                                width: "100%",
                                 listStyle: "none",
                                 gap: "5px",
+                                paddingLeft: "0",
                               }}
                             >
                               {el.techStack.map((tech, index) => (
