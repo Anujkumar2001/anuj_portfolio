@@ -32,18 +32,18 @@ function PortfolioModal({ setModdalOpen, modalData }) {
                     {modalData.title}
                   </h2>
                   <div className="row gy-30">
-                    <div className="col-xl-7">
+                    <div className="col-xl-7" style={{width:"90%"}}>
                       <p className="mb-20 text-light">
                         {modalData.description}
                       </p>
                       {/* tech stack -- */}
 
-                      <div style={{ display: "flex", gap: "10px" }}>
-                        <h1 style={{ color: "white", fontSize: "20px" }}>
+                      <div style={{ display: "flex", gap:'0 5px',flexWrap:'wrap',alignItems:'center'}}>
+                        <h1 style={{ color: "white", fontSize: "20px",color:'orange',margin:'0' }}>
                           Tech Stack :-
                         </h1>
                         {modalData.techStack.map((el) => {
-                          return <h2 style={{ color: "white" }}>{el},</h2>;
+                          return <p style={{ color: "white",fontSize:'20px',margin:'0', }}>{el},</p>;
                         })}
                       </div>
                     </div>

@@ -98,7 +98,7 @@ const Portfolio = ({ userData }) => {
           </div>
 
           <div className="portfolio-list-wrap">
-            {projectData?.slice(0, 4)?.map((el, index) => {
+            {projectData?.slice(0, 5)?.map((el, index) => {
               return (
                 <div className="portfolio-list" key={index}>
                   <div className="portfolio-card">

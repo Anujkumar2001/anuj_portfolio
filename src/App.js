@@ -17,6 +17,7 @@ import pro1 from "./img/demo.png";
 import pro2 from "./img/demo1.png";
 import pro3 from "./img/demo2.png";
 import pro4 from "./img/demo4.png";
+import pro5 from "./img/tod0.png"
 
 import blogPostVideo from "./asset/blog.mp4";
 import whatsapp_video from "./asset/whatsapp.mp4";
@@ -121,6 +122,26 @@ const App = () => {
             "node js",
           ],
           title: "Collab write application",
+        },
+        {
+          description: `Welcome to my ToDo List application! This application functions like any other ToDo List app, allowing you to manage your tasks efficiently.
+
+          Once you enter a task in the input field and click the "Add Task" button, it will be added to the list visible in the application. The unique feature of this application is the utilization of React and Redux Toolkit with persistent storage. This means that even if you refresh the page, your ToDo list items will not be lost.
+          
+          Each task in the list is accompanied by a checkbox. You can mark a task as completed by checking the box, which will draw a line through the task text, indicating that it's done. Additionally, I've included a delete button for each task, allowing you to remove tasks from your list as needed.
+    `,
+          githuburl: "https://github.com/Anujkumar2001/react_todo_list",
+          image: {
+            url: pro5,
+          },
+          videoUrl: {
+            url: "",
+          },
+          liveurl:
+            "https://66366ac68606eb1ae6b38cc7--elaborate-eclair-a1dc8f.netlify.app/",
+
+          techStack: ["React", "Html", "Css", "Javascript","Redux"],
+          title: "React Todo Application",
         },
       ],
       skills: [
