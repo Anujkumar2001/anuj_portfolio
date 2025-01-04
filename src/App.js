@@ -130,7 +130,7 @@ const App = () => {
       ],
       companyProjects: [
         {
-          description: "Built the complete frontend for a VPN application enabling users to connect/disconnect VPNs, monitor performance, and interact with system tray functionalities. Integrated dynamic UI components and optimized performance for seamless cross-platform functionality.",
+          description: "Built the complete frontend for a VPN Desktop application enabling users to connect/disconnect VPNs, monitor performance, and interact with system tray functionalities. Integrated dynamic UI components and optimized performance for seamless cross-platform functionality.",
           githuburl: "",
           image: {
             url: vpnApp
@@ -140,7 +140,7 @@ const App = () => {
           },
           liveurl: "",
           techStack: ["React", "Tauri", 'taildwind css'],
-          title: "VPN Application"
+          title: "VPN Desktop Application"
         },
         {
           description: "Designed and developed the company’s official website showcasing proxy services and server capabilities. Ensured cross-browser compatibility and implemented a responsive design for better user experience.",
