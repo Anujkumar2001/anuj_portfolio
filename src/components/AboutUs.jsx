@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { useCountUp } from "react-use-count-up";
+import { FcNext, FcPrevious } from "react-icons/fc";
+import skillsData from "../data/skills.json";
+import { getSkillsData } from "../utility/getSkillsData";
 
 const AboutUs = ({ userData }) => {
   const [showCart3, setShowCart3] = useState(true);
   const [isClick3, setIsClick3] = useState("active");
   const [count, setCount] = useState(0);
-
+  const [categoryIndex, setCategoryIndex] = useState(0);
+  const [skills, setSkills] = useState([]);
   const count1 = (val) => {
     if (userData.about.exp_year == 0) {
       setCount(0);
@@ -13,17 +16,21 @@ const AboutUs = ({ userData }) => {
       let interval = setInterval(() => {
         val++;
         setCount(val);
-        if (val == userData.about.exp_year) {
+        if (val === userData.about.exp_year) {
           clearInterval(interval);
         }
       }, 200);
     }
   };
 
+  // useEffect(() => {
+  //   count1(0);
+  // }, []);
   useEffect(() => {
-    count1(0);
-  }, []);
-  // console.log(userData, "about us");
+    let category = skillsData.skills[categoryIndex].category;
+    const data = getSkillsData({ category });
+    setSkills(data[0]);
+  }, [categoryIndex]);
   return (
     <div className="overflow-hidden space" id="about-sec">
       <div className="container">
@@ -41,10 +48,9 @@ const AboutUs = ({ userData }) => {
                   style={{
                     objectFit: "cover",
                     height: "100%",
-                    objectFit: "cover",
                   }}
                   src={userData.about.avatar.url}
-                  alt="image"
+                  alt="images"
                 />
               </div>
               <div className="year-counter jump">
@@ -61,7 +67,64 @@ const AboutUs = ({ userData }) => {
               <h2 className="sec-title">{userData.about.quote}</h2>
             </div>
             <div className="about-tab-1">
+              {/* {-----------/* main skills selections --------------------------- */}{" "}
+              {/* <div className="flex  justify-center">
+                <div className=" border-1 border-gray-500 flex items-center justify-center  w-[8%] h-14 py-2 ">
+                  <FcPrevious />
+                </div>
+                <h3 className="bg-[#ff9301] text-white text-center py-2 h-14  w-[80%]">
+                  Technical Skills
+                </h3>
+                <div className=" border-1 border-gray-500 flex items-center justify-center  w-[8%] h-14 py-2 ">
+                  <FcNext />
+                </div>
+              </div> */}
+              <div className="flex items-center justify-center bg-gray-100">
+                <button
+                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                  onClick={() =>
+                    setCategoryIndex((pre) => (pre !== 0 ? pre - 1 : pre))
+                  }
+                  // disabled={currentIndex === 0}
+                >
+                  Previous
+                </button>
+                <div className="mx-4  border border-gray-300 rounded bg-white min-w-[200px] text-center">
+                  <p className="text-center">
+                    {skillsData.skills[categoryIndex].category}
+                  </p>
+                </div>
+                <button
+                  className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300"
+                  onClick={() =>
+                    setCategoryIndex((pre) =>
+                      pre !== skillsData.skills.length - 1 ? pre + 1 : pre
+                    )
+                  }
+                  // disabled={currentIndex === contentArray.length - 1}
+                >
+                  Next
+                </button>
+              </div>
               <div className="filter-menu-active">
+                {/* <button
+                  // style={showCart3 ? { border: "2px solid black" } : ""}
+                  style={
+                    !showCart3
+                      ? { border: "2px solid black" }
+                      : { border: "none" }
+                  }
+                  type="button"
+                  onClick={() => {
+                    setShowCart3(!showCart3);
+                    setIsClick3(showCart3 !== true ? "active" : " ");
+                  }}
+                  className={`${isClick3} th-btn link-anim`}
+                >
+                  <span className="text-anime">
+                    <span className="text">Framework Tools</span>
+                  </span>
+                </button>
                 <button
                   // style={showCart3 ? { border: "2px solid black" } : ""}
                   style={
@@ -77,15 +140,51 @@ const AboutUs = ({ userData }) => {
                   className={`${isClick3} th-btn link-anim`}
                 >
                   <span className="text-anime">
-                    <span className="text">Skills</span>
+                    <span className="text">frontend</span>
                   </span>
                 </button>
+                <button
+                  // style={showCart3 ? { border: "2px solid black" } : ""}
+                  style={
+                    !showCart3
+                      ? { border: "2px solid black" }
+                      : { border: "none" }
+                  }
+                  type="button"
+                  onClick={() => {
+                    setShowCart3(!showCart3);
+                    setIsClick3(showCart3 !== true ? "active" : " ");
+                  }}
+                  className={`${isClick3} th-btn link-anim`}
+                >
+                  <span className="text-anime">
+                    <span className="text">API Integration</span>
+                  </span>
+                </button>
+                <button
+                  // style={showCart3 ? { border: "2px solid black" } : ""}
+                  style={
+                    !showCart3
+                      ? { border: "2px solid black" }
+                      : { border: "none" }
+                  }
+                  type="button"
+                  onClick={() => {
+                    setShowCart3(!showCart3);
+                    setIsClick3(showCart3 !== true ? "active" : " ");
+                  }}
+                  className={`${isClick3} th-btn `}
+                >
+                  <span className="text-anime">
+                    <span className="text">Testing & Debugging</span>
+                  </span>
+                </button> */}
               </div>
               <div className="filter-active-cat1">
                 {showCart3 && (
                   <div className="filter-item cat3">
                     <div className="about-tab-wrap">
-                      {userData.skills.map((el, index) => (
+                      {skills.items?.map((el, index) => (
                         <div
                           className="about-tab-card"
                           key={index}
@@ -98,7 +197,7 @@ const AboutUs = ({ userData }) => {
                           }}
                         >
                           <span className="about-tab-card-subtitle">
-                            {el.name}
+                            {el.title}
                           </span>
                           <h4
                             className="about-tab-card-title"
@@ -108,10 +207,9 @@ const AboutUs = ({ userData }) => {
                               overflow: "hidden",
                             }}
                           >
-                            <img src={el.image.url} alt="" />
+                            <img src={el.image} alt="" />
                           </h4>
                           <p className="about-tab-card-text">{el.name}</p>{" "}
-                          {/* Not sure what data you want to display here */}
                         </div>
                       ))}
                     </div>

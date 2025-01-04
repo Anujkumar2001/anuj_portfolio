@@ -23,6 +23,7 @@ import blogPostVideo from "./asset/blog.mp4";
 import whatsapp_video from "./asset/whatsapp.mp4";
 import collabWriteVideo from "./asset/collabWrite.mp4";
 
+
 const App = () => {
   const [userData2, setUserData2] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -140,49 +141,10 @@ const App = () => {
           liveurl:
             "https://66366ac68606eb1ae6b38cc7--elaborate-eclair-a1dc8f.netlify.app/",
 
-          techStack: ["React", "Html", "Css", "Javascript","Redux"],
+          techStack: ["React", "Html", "Css", "Javascript", "Redux"],
           title: "React Todo Application",
         },
       ],
-      skills: [
-        {
-          name: "HTML",
-          image: {
-            url: "https://cdn-icons-png.flaticon.com/512/174/174854.png",
-          },
-        },
-        {
-          name: "CSS",
-          image: {
-            url: "https://1000logos.net/wp-content/uploads/2020/09/CSS-Logo.jpg",
-          },
-        },
-        {
-          name: "JAVASCRIPT",
-          image: {
-            url: "https://www.ankitweblogic.com/javascript/js_img/javascript.png",
-          },
-        },
-        {
-          name: "REACT",
-          image: {
-            url: "https://www.abrilliants.com/wp-content/uploads/2023/05/1631110818-logo-react-js.png",
-          },
-        },
-        {
-          name: "TAILWIND",
-          image: {
-            url: "https://www.drupal.org/files/styles/grid-3-2x/public/project-images/screenshot_361.png?itok=w4CzcWyb",
-          },
-        },
-        {
-          name: "BOOTSTRAP",
-          image: {
-            url: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/800px-Bootstrap_logo.svg.png",
-          },
-        },
-      ],
-
       social_handles: [
         {
           image: {
@@ -256,7 +218,6 @@ const App = () => {
       setIsLoading(false);
     }
   };
-  console.log(userData2, "getting data from api");
 
   useEffect(() => {
     fetchUserData();
