@@ -10,22 +10,18 @@ const AboutUs = ({ userData }) => {
   const [categoryIndex, setCategoryIndex] = useState(0);
   const [skills, setSkills] = useState([]);
   const count1 = (val) => {
-    if (userData.about.exp_year == 0) {
-      setCount(0);
-    } else {
-      let interval = setInterval(() => {
-        val++;
-        setCount(val);
-        if (val === userData.about.exp_year) {
-          clearInterval(interval);
-        }
-      }, 200);
-    }
+    let interval = setInterval(() => {
+      val++;
+      setCount(val);
+      if (val === 6) {
+        clearInterval(interval);
+      }
+    }, 200);
   };
 
-  // useEffect(() => {
-  //   count1(0);
-  // }, []);
+  useEffect(() => {
+    count1(0);
+  }, []);
   useEffect(() => {
     let category = skillsData.skills[categoryIndex].category;
     const data = getSkillsData({ category });
@@ -55,9 +51,15 @@ const AboutUs = ({ userData }) => {
               </div>
               <div className="year-counter jump">
                 <div className="year-counter_number">
-                  <span className="counter-number">{count}</span>
+                  <span className="counter-number flex items-end justify-center">
+                    {count} <p className="text-xl text-white">mo</p>{" "}
+                  </span>
                 </div>
-                <p className="year-counter_text">Frasher</p>
+                <div className="flex flex-col  items-center justify-center  ">
+                  <p className=" text-2xl  mb-1  text-themeColor ">Intern</p>
+                  <span className="w-full h-[1px] bg-themeColor "></span>
+                  <p className="text-gray-600 mb-0 ">24-bytes</p>
+                </div>
               </div>
             </div>
           </div>
@@ -87,10 +89,12 @@ const AboutUs = ({ userData }) => {
                   }
                   // disabled={currentIndex === 0}
                 >
-                  Previous
+                  {categoryIndex !== 0
+                    ? skillsData.skills[categoryIndex - 1].category
+                    : skillsData.skills[categoryIndex].category}
                 </button>
                 <div className="mx-4  border border-gray-300 rounded bg-white min-w-[200px] text-center">
-                  <p className="text-center">
+                  <p className="text-center mb-0 ">
                     {skillsData.skills[categoryIndex].category}
                   </p>
                 </div>
@@ -103,7 +107,9 @@ const AboutUs = ({ userData }) => {
                   }
                   // disabled={currentIndex === contentArray.length - 1}
                 >
-                  Next
+                  {skillsData.skills[categoryIndex + 1].category
+                    ? skillsData.skills[categoryIndex + 1].category
+                    : skillsData.skills[categoryIndex].category}
                 </button>
               </div>
               <div className="filter-menu-active">

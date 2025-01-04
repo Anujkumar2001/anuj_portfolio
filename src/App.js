@@ -17,7 +17,9 @@ import pro1 from "./img/demo.png";
 import pro2 from "./img/demo1.png";
 import pro3 from "./img/demo2.png";
 import pro4 from "./img/demo4.png";
-import pro5 from "./img/tod0.png"
+import vpnApp from "./asset/vpn.png"
+import website from "./asset/website.png"
+import speedTest from "./asset/speedTest.png"
 
 import blogPostVideo from "./asset/blog.mp4";
 import whatsapp_video from "./asset/whatsapp.mp4";
@@ -48,7 +50,7 @@ const App = () => {
         },
       },
       email: "anujkumar1072001@gmail.com",
-      projects: [
+      ownProjects: [
         {
           description: `OHaonaur user-friendly blog post application offers a seamless experience for both new and existing users. Featuring a simple and secure login system, users can effortlessly access their accounts and begin sharing their thoughts and experiences through personalized blog posts. With secure account creation using email and password, alongside two-factor authentication via OTP for enhanced security, users can trust in the safety of their accounts. Upon login, users gain access to a personalized dashboard where they can Haonacreate, edit, and delete their own blog posts. Additionally, they can interact with other users' posts through comments and view a robust search functionality for discovering specific posts based on keywords. For guest users, there is limited access to view posts created by others, ensuring a seamless browsing experience even without logging in.
     
@@ -124,26 +126,48 @@ const App = () => {
           ],
           title: "Collab write application",
         },
-        {
-          description: `Welcome to my ToDo List application! This application functions like any other ToDo List app, allowing you to manage your tasks efficiently.
 
-          Once you enter a task in the input field and click the "Add Task" button, it will be added to the list visible in the application. The unique feature of this application is the utilization of React and Redux Toolkit with persistent storage. This means that even if you refresh the page, your ToDo list items will not be lost.
-          
-          Each task in the list is accompanied by a checkbox. You can mark a task as completed by checking the box, which will draw a line through the task text, indicating that it's done. Additionally, I've included a delete button for each task, allowing you to remove tasks from your list as needed.
-    `,
-          githuburl: "https://github.com/Anujkumar2001/react_todo_list",
+      ],
+      companyProjects: [
+        {
+          description: "Built the complete frontend for a VPN application enabling users to connect/disconnect VPNs, monitor performance, and interact with system tray functionalities. Integrated dynamic UI components and optimized performance for seamless cross-platform functionality.",
+          githuburl: "",
           image: {
-            url: pro5,
+            url: vpnApp
           },
           videoUrl: {
-            url: "",
+            url: ""
           },
-          liveurl:
-            "https://66366ac68606eb1ae6b38cc7--elaborate-eclair-a1dc8f.netlify.app/",
-
-          techStack: ["React", "Html", "Css", "Javascript", "Redux"],
-          title: "React Todo Application",
+          liveurl: "",
+          techStack: ["React", "Tauri", 'taildwind css'],
+          title: "VPN Application"
         },
+        {
+          description: "Designed and developed the company’s official website showcasing proxy services and server capabilities. Ensured cross-browser compatibility and implemented a responsive design for better user experience.",
+          githuburl: "",
+          image: {
+            url: website
+          },
+          videoUrl: {
+            url: ""
+          },
+          liveurl: "https://planet-proxy.com/",
+          techStack: ["React", "Html", "Css", "Javascript"],
+          title: "Planet Proxy Landing Page"
+        },
+        {
+          description: "Built a speed test platform similar to Ookla, allowing users to measure internet speed. Implemented interactive visualizations for download/upload speed and latency metrics.",
+          githuburl: "",
+          image: {
+            url: speedTest
+          },
+          videoUrl: {
+            url: ""
+          },
+          liveurl: "https://speed-test.planet-proxy.com/",
+          techStack: ["React", "Html", "Css", "Javascript"],
+          title: "Planet Proxy Speed Test"
+        }
       ],
       social_handles: [
         {

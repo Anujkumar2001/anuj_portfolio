@@ -1,3 +1,5 @@
+/* eslint-disable no-dupe-keys */
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +19,10 @@ function PortfolioModal({ setModdalOpen, modalData }) {
                   setModdalOpen(false);
                 }}
               >
-                <FontAwesomeIcon icon={faTimes} />
+                <FontAwesomeIcon
+                  icon={faTimes}
+                  style={{ display: "inline-block" }}
+                />
               </button>
               <div className="page-single bg-title">
                 <div className="page-img mb-30">
@@ -32,18 +37,42 @@ function PortfolioModal({ setModdalOpen, modalData }) {
                     {modalData.title}
                   </h2>
                   <div className="row gy-30">
-                    <div className="col-xl-7" style={{width:"90%"}}>
+                    <div className="col-xl-7" style={{ width: "90%" }}>
                       <p className="mb-20 text-light">
                         {modalData.description}
                       </p>
                       {/* tech stack -- */}
 
-                      <div style={{ display: "flex", gap:'0 5px',flexWrap:'wrap',alignItems:'center'}}>
-                        <h1 style={{ color: "white", fontSize: "20px",color:'orange',margin:'0' }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          gap: "0 5px",
+                          flexWrap: "wrap",
+                          alignItems: "center",
+                        }}
+                      >
+                        <h1
+                          style={{
+                            color: "white",
+                            fontSize: "20px",
+                            color: "orange",
+                            margin: "0",
+                          }}
+                        >
                           Tech Stack :-
                         </h1>
                         {modalData.techStack.map((el) => {
-                          return <p style={{ color: "white",fontSize:'20px',margin:'0', }}>{el},</p>;
+                          return (
+                            <p
+                              style={{
+                                color: "white",
+                                fontSize: "20px",
+                                margin: "0",
+                              }}
+                            >
+                              {el},
+                            </p>
+                          );
                         })}
                       </div>
                     </div>

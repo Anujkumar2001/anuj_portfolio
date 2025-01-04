@@ -273,10 +273,10 @@ button {
   transition: all ease 0.4s;
 }
 
-img {
-  border: none;
-  max-width: 100%;
-}
+// img {
+//   border: none;
+//   max-width: 100%;
+// }
 
 ins {
   text-decoration: none;
@@ -17027,9 +17027,9 @@ span.select2-selection.select2-selection--single:focus {
   height: 368px;
   border-radius: 10px;
   object-fit: cover;
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
+  // -webkit-transform: scale(1.1);
+  // -ms-transform: scale(1.1);
+  // transform: scale(1.1);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -17811,8 +17811,8 @@ span.select2-selection.select2-selection--single:focus {
 
 .client-card {
   text-align: center;
+  flex-direction: column;
   padding: 20px 0;
-  display: block;
   background: var(--body-color);
   border-radius: 10px;
 }

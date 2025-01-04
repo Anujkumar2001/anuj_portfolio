@@ -1,10 +1,12 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 import "../style/swiper.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+// import { Pagination, Navigation } from "swiper/modules";
 const Client = ({ userData }) => {
   return (
     <div className="client-area-1 bg-title space overflow-hidden">
@@ -24,7 +26,7 @@ const Client = ({ userData }) => {
                 className="col-lg-3 col-md-4 col-sm-6"
                 style={{ cursor: "pointer" }}
               >
-                <a className="client-card">
+                <a className="client-card  w-full flex items-center justify-center">
                   <img
                     src={el.image.url}
                     alt="Image"

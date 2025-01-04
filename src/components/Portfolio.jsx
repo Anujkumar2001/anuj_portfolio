@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable array-callback-return */
+import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import PortfolioModal from "./PortfolioModal";
 import Box from "@mui/material/Box";
@@ -9,8 +10,10 @@ import { IoMdSearch } from "react-icons/io";
 const Portfolio = ({ userData }) => {
   const [modalOpen, setModdalOpen] = useState(false);
   const [modalData, setModalData] = useState({});
-  const [projectData, setProjectData] = useState(userData.projects);
+  const [projectData, setProjectData] = useState(userData.companyProjects);
   const [inputVal, setInputVal] = useState("");
+  const [currentProject, setCurrentProject] = useState("companyProjects");
+
   const style = {
     position: "absolute",
     width: "100vw",
@@ -26,11 +29,20 @@ const Portfolio = ({ userData }) => {
     overflowY: "scroll",
   };
 
+  useEffect(() => {
+    if (currentProject === "companyProjects") {
+      setProjectData(userData.companyProjects);
+    } else {
+      setProjectData(userData.ownProjects);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentProject]);
+
   const handleProjects = (e) => {
     const techStackBag = [];
     setInputVal(e.target.value);
-    const b = userData.projects.forEach((el) => {
-      const c = el.techStack.some((tech) => {
+    userData.projects.forEach((el) => {
+      el.techStack.some((tech) => {
         const inputVal = e.target.value.toLowerCase();
         if (tech.toLowerCase().includes(inputVal)) {
           techStackBag.push(el);
@@ -42,6 +54,7 @@ const Portfolio = ({ userData }) => {
     // console.log(b);
     setProjectData(techStackBag);
   };
+
   return (
     <>
       <section
@@ -87,7 +100,7 @@ const Portfolio = ({ userData }) => {
             </div>
             <div className="col-auto align-self-end">
               <div className="sec-btn">
-                <a className="th-btn style-border2 link-anim">
+                <a className="th-btn style-border2 link-anim" href="/">
                   <span className="text-anime">
                     <span className="text">SEE ALL PROJECTS</span>
                   </span>
@@ -97,13 +110,38 @@ const Portfolio = ({ userData }) => {
             </div>
           </div>
 
+          <div className="mb-3 flex gap-2">
+            <button
+              className={`text-xl  ${
+                currentProject !== "companyProjects"
+                  ? "bg-themeColor text-white"
+                  : "bg-orange-200 shadow-[inset_0_4px_6px_rgba(0,0,0,0.1)] text-gray-500"
+              } px-4 py-2  `}
+              onClick={() => {
+                setCurrentProject("companyProjects");
+              }}
+            >
+              Company Projects
+            </button>
+            <button
+              className={`text-xl ${
+                currentProject !== "ownProjects"
+                  ? "bg-themeColor text-white "
+                  : "bg-orange-200 shadow-[inset_0_4px_6px_rgba(0,0,0,0.1)] text-gray-500"
+              } px-4 py-2`}
+              onClick={() => setCurrentProject("ownProjects")}
+            >
+              Own Projects
+            </button>
+          </div>
+
           <div className="portfolio-list-wrap">
             {projectData?.slice(0, 5)?.map((el, index) => {
               return (
                 <div className="portfolio-list" key={index}>
                   <div className="portfolio-card">
                     <div
-                      className="portfolio-img img-shine"
+                      className="portfolio-img img-shine object-contain"
                       data-bs-toggle="modal"
                       data-bs-target="#portfolioModal"
                     >
@@ -113,7 +151,7 @@ const Portfolio = ({ userData }) => {
                           Your browser does not support HTML video.
                         </video>
                       ) : (
-                        <img src={el.image.url} />
+                        <img src={el.image.url} alt="error" />
                       )}
                     </div>
                     <div className="portfolio-content">
@@ -127,7 +165,7 @@ const Portfolio = ({ userData }) => {
                           setModalData(el);
                         }}
                       >
-                        <FaArrowRight />
+                        <FaArrowRight style={{ display: "inline-block" }} />
                       </a>
                       <div className="portfolio-details">
                         <h3 className="portfolio-title">
@@ -142,9 +180,9 @@ const Portfolio = ({ userData }) => {
                             className="portfolio-subtitle"
                             style={{
                               display: "flex",
-                              flexDirection: "column",
+                              // flexDirection: "column",
                               alignItems: "start",
-                              flexWrap: "wrap",
+                              // flexWrap: "wrap",
                               marginTop: "10px",
                             }}
                           >
@@ -172,28 +210,45 @@ const Portfolio = ({ userData }) => {
                             }}
                           >
                             <span
+                              className={` flex items-center justify-center px-3 ${
+                                el.githuburl === ""
+                                  ? "cursor-not-allowed "
+                                  : "cursor-pointer"
+                              }?`}
                               style={{
                                 border: "2px solid black",
-                                padding: "10px",
                                 borderRadius: "10px",
                                 fontSize: "17px",
-                                cursor: "pointer",
                               }}
                             >
-                              <a href={el.githuburl} target="_blank">
+                              <a
+                                className={` flex gap-2 items-center ${
+                                  el.githuburl === ""
+                                    ? "cursor-not-allowed "
+                                    : "cursor-pointer"
+                                }?`}
+                                href={el.githuburl ? el.githuburl : null}
+                                target="_blank"
+                                rel="noreferrer"
+                              >
                                 {<FaGithub />} Github
                               </a>
                             </span>
                             <span
+                              className="px-2 py-2"
                               style={{
                                 border: "2px solid black",
-                                padding: "10px",
                                 borderRadius: "10px",
                                 fontSize: "17px",
                                 cursor: "pointer",
                               }}
                             >
-                              <a href={el.liveurl} target="_blank">
+                              <a
+                                href={el.liveurl}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex"
+                              >
                                 {<MdOutlineDirectionsRun />}
                                 Deploy
                               </a>{" "}

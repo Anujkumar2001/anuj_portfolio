@@ -1,0 +1,80 @@
+{
+  "projects": [
+    {
+      "description": "OHaonaur user-friendly blog post application offers a seamless experience for both new and existing users. Featuring a simple and secure login system, users can effortlessly access their accounts and begin sharing their thoughts and experiences through personalized blog posts. With secure account creation using email and password, alongside two-factor authentication via OTP for enhanced security, users can trust in the safety of their accounts. Upon login, users gain access to a personalized dashboard where they can Haonacreate, edit, and delete their own blog posts. Additionally, they can interact with other users' posts through comments and view a robust search functionality for discovering specific posts based on keywords. For guest users, there is limited access to view posts created by others, ensuring a seamless browsing experience even without logging in.",
+      "githuburl": "https://github.com/Anujkumar2001/blog_post",
+      "image": {
+        "url": "pro1"
+      },
+      "videoUrl": {
+        "url": "blogPostVideo"
+      },
+      "liveurl": "https://65d318b8d7d42af51cae7678--splendid-lokum-7eac97.netlify.app/",
+      "techStack": [
+        "React",
+        "Html",
+        "Css",
+        "Javascript"
+      ],
+      "title": "Blog Post Application"
+    },
+    {
+      "description": "Hello and welcome to my WhatsApp web clone application! I've completed the entire frontend part of this app, aiming to replicate the functionalities of WhatsApp seamlessly. Users can enjoy features such as searching for contacts, chatting with them including voice recordings, exploring community interactions, accessing channels, staying updated with status changes, and discovering new contacts to engage with. My goal is to provide an experience that feels just like the real WhatsApp. Feel free to explore and share any feedback or questions you may have!",
+      "githuburl": "https://github.com/Anujkumar2001/whatsapp_clone",
+      "image": {
+        "url": "pro2"
+      },
+      "videoUrl": {
+        "url": "whatsapp_video"
+      },
+      "liveurl": "https://65ebc2c89ed3fb41365c84f4--aquamarine-souffle-389f5b.netlify.app/",
+      "techStack": [
+        "React",
+        "Html",
+        "Css",
+        "Javascript"
+      ],
+      "title": "WhatsApp Web Clone"
+    },
+    {
+      "description": "In this currency converter application, you can input the amount and select the country whose currency value you want to view. The application will then display the accurate currency value based on your selection.",
+      "githuburl": "https://github.com/Anujkumar2001/currency_converter",
+      "image": {
+        "url": "pro3"
+      },
+      "videoUrl": {
+        "url": ""
+      },
+      "liveurl": "https://65d30d8bc1e04cd215662faa--neon-sfogliatella-ca659e.netlify.app/",
+      "techStack": [
+        "React",
+        "Html",
+        "Css",
+        "Javascript"
+      ],
+      "title": "RealTime Currency Converter"
+    },
+    {
+      "description": "Hello everyone, welcome to our CollabWrite application! It's a platform where you can easily create an account using your valid details. Once you're logged in, you can create files and personalize them however you like. The coolest part is, you can share these files with others! And guess what? Thanks to our real-time text updating feature powered by Socket.IO, whenever someone makes changes to a shared file, you'll see those updates happen instantly. It keeps everyone on the same page, making collaboration a breeze.",
+      "githuburl": "https://github.com/Anujkumar2001/collab_write_app",
+      "image": {
+        "url": "pro4"
+      },
+      "videoUrl": {
+        "url": "collabWriteVideo"
+      },
+      "liveurl": "#",
+      "techStack": [
+        "React",
+        "Html",
+        "Css",
+        "Javascript",
+        "express",
+        "mongoDb",
+        "socketIo",
+        "node js"
+      ],
+      "title": "Collab write application"
+    }
+  ]
+}
