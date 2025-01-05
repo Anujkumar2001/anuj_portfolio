@@ -65,6 +65,10 @@ header.scrolled {
   background-color: black; /* Change background color when scrolled */
 }
 
+.svg{
+  display: inline-block;
+}
+
 /* Add more styles as needed */
 @media only screen and (max-width: 1500px) {
   .process_img {

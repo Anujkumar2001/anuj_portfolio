@@ -81,9 +81,9 @@ const AboutUs = ({ userData }) => {
                   <FcNext />
                 </div>
               </div> */}
-              <div className="flex items-center justify-between rounded-full bg-themeColor ">
+              <div className="flex max-w-[300px] md:max-w-p[400px]  items-center justify-between rounded-full bg-themeColor ">
                 <button
-                  className="bg-white rounded-full text-black px-5 py-3  transition duration-300 border-[1px] border-gray-600 "
+                  className="bg-white rounded-full text-black md:px-0 px-5 py-2  transition duration-300 border-[1px] border-gray-600 "
                   onClick={() =>
                     setCategoryIndex((pre) => (pre !== 0 ? pre - 1 : pre))
                   }
@@ -92,12 +92,12 @@ const AboutUs = ({ userData }) => {
                   pre
                 </button>
                 <div className="rounded  min-w-[200px] text-center">
-                  <p className="text-center mb-0  text-white font-bold text-xl">
+                  <p className="text-center mb-0 font-normal  text-white md:font-bold text-lg">
                     {skillsData.skills[categoryIndex].category}
                   </p>
                 </div>
                 <button
-                  className="bg-white rounded-full text-black px-5 py-3  hover:bg-white transition duration-300 border-[1px] border-gray-600"
+                  className="bg-white rounded-full text-black md:px-5 px-2 py-2  hover:bg-white transition duration-300 border-[1px] border-gray-600"
                   onClick={() =>
                     setCategoryIndex((pre) =>
                       pre !== skillsData.skills.length - 1 ? pre + 1 : pre

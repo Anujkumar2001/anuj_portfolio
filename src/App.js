@@ -24,6 +24,7 @@ import speedTest from "./asset/speedTest.png"
 import blogPostVideo from "./asset/blog.mp4";
 import whatsapp_video from "./asset/whatsapp.mp4";
 import collabWriteVideo from "./asset/collabWrite.mp4";
+import profile from "./asset/profile.jpg"
 
 
 const App = () => {
@@ -46,7 +47,7 @@ const App = () => {
           "Empowering the Digital Experience: Crafting Seamless Solutions with Code",
         title: "FrontEnd Developer",
         avatar: {
-          url: "https://65ebdb84d83a6d5440751329--benevolent-speculoos-6306d2.netlify.app/static/media/main2.81adaaf6a193e0442fb2.jpeg",
+          url: profile,
         },
       },
       email: "anujkumar1072001@gmail.com",

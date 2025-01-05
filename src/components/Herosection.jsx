@@ -28,7 +28,7 @@ const HeroSection = ({ userData }) => {
     let interval = setInterval(() => {
       val = val + 200;
       setCount(val);
-      if (val == 2000) {
+      if (val === 2000) {
         clearInterval(interval);
       }
     }, 100);
@@ -39,7 +39,7 @@ const HeroSection = ({ userData }) => {
   }, []);
   return (
     <div
-      className="th-hero-wrapper hero-1"
+      className="th-hero-wrapper hero-1 h-screen"
       id="hero"
       style={{ paddingTop: "40px 0" }}
     >
@@ -69,7 +69,7 @@ const HeroSection = ({ userData }) => {
             </div>
           </div>
           <div className="col-lg-12 text-center">
-            <div className="hero-img-1">
+            <div className="hero-img-1 mt-5">
               <div className="hero-video-wrap jump-reverse">
                 <div className="hero-thumb-wrap"></div>
                 <p>{subTitle}</p>
@@ -142,19 +142,24 @@ const HeroSection = ({ userData }) => {
                 </div>
               </div>{" "}
               <div
-                className="thumb"
+                className="thumb rounded-none md:rounded-full"
                 style={{
-                  maxHeight: "580px",
-                  maxWidth: "502px",
+                  maxHeight: "450px",
+                  maxWidth: "450px",
                   margin: "auto",
                   overflow: "hidden",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  // borderRadius: "50%", // Makes the container round
                 }}
               >
                 <img
-                  style={{ objectFit: "cover", height: "100%", width: "100%" }}
+                  style={{
+                    objectFit: "cover", // Ensures the image covers the container
+                    height: "100%", // Makes the image fit the height of the container
+                    width: "100%", // Makes the image fit the width of the container
+                  }}
                   src={avatar.url}
                   alt="shape"
                 />

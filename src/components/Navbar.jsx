@@ -110,7 +110,7 @@ const Navbar = () => {
                 setToogleNav(false);
               }}
             >
-              <IoIosClose />
+              <IoIosClose style={{ display: "inline-block" }} />
             </button>
             <div
               className="mobile-logo"
@@ -349,7 +349,7 @@ const Navbar = () => {
                           setToogleNav(true);
                         }}
                       >
-                        <IoReorderThree />
+                        <IoReorderThree style={{ display: "inline-block" }} />
                       </button>
                     </div>
                   </div>
