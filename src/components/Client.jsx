@@ -19,12 +19,13 @@ const Client = ({ userData }) => {
             </div>
           </div>
         </div>
-        <div class="row gy-4 justify-content-center">
+        <div className="row gy-4 justify-content-center">
           {userData.tools.map((el, index) => {
             return (
               <div
                 className="col-lg-3 col-md-4 col-sm-6"
                 style={{ cursor: "pointer" }}
+                key={index}
               >
                 <a className="client-card  w-full flex items-center justify-center">
                   <img

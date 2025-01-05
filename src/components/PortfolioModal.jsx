@@ -61,9 +61,10 @@ function PortfolioModal({ setModdalOpen, modalData }) {
                         >
                           Tech Stack :-
                         </h1>
-                        {modalData.techStack.map((el) => {
+                        {modalData.techStack.map((el, index) => {
                           return (
                             <p
+                              key={index}
                               style={{
                                 color: "white",
                                 fontSize: "20px",

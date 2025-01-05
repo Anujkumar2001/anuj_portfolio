@@ -70,6 +70,7 @@ const Footer = ({ userData }) => {
                     className="social-link link-anim"
                     href={el.url}
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <span
                       className="icon-btn"

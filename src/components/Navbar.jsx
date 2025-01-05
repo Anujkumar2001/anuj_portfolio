@@ -361,9 +361,17 @@ const Navbar = () => {
                         className="th-btn style-border link-anim"
                         href="https://www.canva.com/design/DAF9PpxnxHs/0di57MS7juVKRSbD8MWLzw/view?utm_content=DAF9PpxnxHs&utm_campaign=designshare&utm_medium=link&utm_source=editor"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <span className="text-anime">
-                          <a className="text">Get CV</a>
+                          <a
+                            className="text"
+                            target="_blank"
+                            href="https://www.canva.com/design/DAGaxkNLGiY/rLK1cModPiyIdYcXBf_qBg/view?utm_content=DAGaxkNLGiY&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hde5495bb53"
+                            rel="noreferrer"
+                          >
+                            Get CV
+                          </a>
                         </span>
                       </a>
                     </div>

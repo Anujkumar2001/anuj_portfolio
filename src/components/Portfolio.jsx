@@ -41,7 +41,7 @@ const Portfolio = ({ userData }) => {
   const handleProjects = (e) => {
     const techStackBag = [];
     setInputVal(e.target.value);
-    userData.projects.forEach((el) => {
+    userData[currentProject]?.forEach((el) => {
       el.techStack.some((tech) => {
         const inputVal = e.target.value.toLowerCase();
         if (tech.toLowerCase().includes(inputVal)) {
@@ -54,7 +54,6 @@ const Portfolio = ({ userData }) => {
     // console.log(b);
     setProjectData(techStackBag);
   };
-
   return (
     <>
       <section
@@ -84,6 +83,7 @@ const Portfolio = ({ userData }) => {
                   <input
                     type="text"
                     placeholder="Search project with techstack"
+                    className="placeholder-gray-300 text-xl"
                     style={{
                       outline: "none",
                       border: "none",
@@ -119,6 +119,7 @@ const Portfolio = ({ userData }) => {
               } px-4 py-2  `}
               onClick={() => {
                 setCurrentProject("companyProjects");
+                setInputVal("");
               }}
             >
               Company Projects
@@ -129,9 +130,12 @@ const Portfolio = ({ userData }) => {
                   ? "bg-themeColor text-white "
                   : "bg-orange-200 shadow-[inset_0_4px_6px_rgba(0,0,0,0.1)] text-gray-500"
               } px-4 py-2`}
-              onClick={() => setCurrentProject("ownProjects")}
+              onClick={() => {
+                setCurrentProject("ownProjects");
+                setInputVal("");
+              }}
             >
-              Own Projects
+              Personal Projects
             </button>
           </div>
 
@@ -176,7 +180,7 @@ const Portfolio = ({ userData }) => {
                           >
                             {el.title}
                           </a>
-                          <p
+                          <span
                             className="portfolio-subtitle"
                             style={{
                               display: "flex",
@@ -201,7 +205,7 @@ const Portfolio = ({ userData }) => {
                                 <li key={index}>{tech},</li>
                               ))}
                             </ul>
-                          </p>
+                          </span>
 
                           <div
                             style={{
