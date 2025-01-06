@@ -68,7 +68,7 @@ const AboutUs = ({ userData }) => {
               <span className="sub-title">About Us</span>
               <h2 className="sec-title">{userData.about.quote}</h2>
             </div>
-            <div className="about-tab-1">
+            <div className="about-tab-1  flex-col">
               {/* {-----------/* main skills selections --------------------------- */}{" "}
               {/* <div className="flex  justify-center">
                 <div className=" border-1 border-gray-500 flex items-center justify-center  w-[8%] h-14 py-2 ">
@@ -81,9 +81,11 @@ const AboutUs = ({ userData }) => {
                   <FcNext />
                 </div>
               </div> */}
-              <div className="flex max-w-[300px] md:max-w-p[400px]  items-center justify-between rounded-full bg-themeColor ">
+              <div className="flex max-w-[300px] md:max-w-[400px]  items-center justify-between rounded-full bg-themeColor mx-auto ">
                 <button
-                  className="bg-white rounded-full text-black md:px-0 px-5 py-2  transition duration-300 border-[1px] border-gray-600 "
+                  className={`bg-white md:min-w-20 md:px-5 px-3 py-2  hover:bg-white transition border-gray-400 duration-300 border-[1px]  ${
+                    0 !== categoryIndex ? "text-black" : "text-gray-400"
+                  }`}
                   onClick={() =>
                     setCategoryIndex((pre) => (pre !== 0 ? pre - 1 : pre))
                   }
@@ -91,13 +93,17 @@ const AboutUs = ({ userData }) => {
                 >
                   pre
                 </button>
-                <div className="rounded  min-w-[200px] text-center">
+                <div className="rounded  md:min-w-[200px] text-center">
                   <p className="text-center mb-0 font-normal  text-white md:font-bold text-lg">
                     {skillsData.skills[categoryIndex].category}
                   </p>
                 </div>
                 <button
-                  className="bg-white rounded-full text-black md:px-5 px-2 py-2  hover:bg-white transition duration-300 border-[1px] border-gray-600"
+                  className={`bg-white md:min-w-20   md:px-5 px-2 py-2  hover:bg-white transition border-gray-400 duration-300 border-[1px]  ${
+                    skillsData.skills.length - 1 !== categoryIndex
+                      ? "text-black"
+                      : "text-gray-400"
+                  }`}
                   onClick={() =>
                     setCategoryIndex((pre) =>
                       pre !== skillsData.skills.length - 1 ? pre + 1 : pre
