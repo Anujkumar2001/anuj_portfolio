@@ -66,7 +66,7 @@ const Portfolio = ({ userData }) => {
             <div className="col-xl-4">
               <div className="title-area">
                 <span className="sub-title">Projects</span>
-                <h2 className="sec-title">I proud of the Same works</h2>
+                <h2 className="sec-title">I proud of the Some works</h2>
                 {/* project search section ---------- */}
                 <span
                   style={{
