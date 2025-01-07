@@ -3,6 +3,7 @@ import { FaPlay } from "react-icons/fa";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import { IoCloseSharp } from "react-icons/io5";
+import LazyLoadAd from "./LazyLoad";
 
 const HeroSection = ({ userData }) => {
   const [modalOpen, setModdalOpen] = useState(false);
@@ -43,6 +44,12 @@ const HeroSection = ({ userData }) => {
       id="hero"
       style={{ paddingTop: "40px 0" }}
     >
+      <div className="w-[40%]">
+        <LazyLoadAd
+          adSlot={1645857846}
+          adStyle={{ width: "300px", height: "250px" }}
+        />
+      </div>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-12">
