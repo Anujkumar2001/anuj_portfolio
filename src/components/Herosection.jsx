@@ -3,7 +3,7 @@ import { FaPlay } from "react-icons/fa";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import { IoCloseSharp } from "react-icons/io5";
-import ReactAdsense from "@pkasila/react-adsense";
+import AdSense from "react-adsense";
 
 const HeroSection = ({ userData }) => {
   const [modalOpen, setModdalOpen] = useState(false);
@@ -44,11 +44,13 @@ const HeroSection = ({ userData }) => {
       id="hero"
       style={{ paddingTop: "40px 0" }}
     >
-      <ReactAdsense
+      <AdSense.Google
         client={"ca-pub-9556792412506302"}
-        slot={1645857846}
-        layout={"in-article"}
-        format={"fluid"}
+        slot="8019031792"
+        style={{ display: "block" }}
+        format="auto"
+        responsive="true"
+        layoutKey="-gw-1+2a-9x+5c"
       />
       <div className="w-[40%]"></div>
       <div className="container">
