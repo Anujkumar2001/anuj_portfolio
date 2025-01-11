@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import { IoCloseSharp } from "react-icons/io5";
 // import AdSense from "react-adsense";
-import LazyLoadAd from "./LazyloadAds";
 
 const HeroSection = ({ userData }) => {
   const [modalOpen, setModdalOpen] = useState(false);
@@ -45,24 +44,6 @@ const HeroSection = ({ userData }) => {
       id="hero"
       style={{ paddingTop: "40px 0" }}
     >
-      <div className="w-full mt-28 min-h-[400px] border-2 border-white">
-        {/* <AdSense.Google
-          client={"ca-pub-9556792412506302"}
-          slot="8019031792"
-          style={{ display: "block" }}
-          format="auto"
-          responsive="true"
-          layoutKey="-gw-1+2a-9x+5c"
-        /> */}
-        <LazyLoadAd
-          adSlot="8019031792"
-          adStyle={{
-            width: "100%",
-            height: "100%",
-            display: "block",
-          }}
-        />
-      </div>
       <div className="w-[40%]"></div>
       <div className="container">
         <div className="row justify-content-center">
